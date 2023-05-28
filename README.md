@@ -1,4 +1,4 @@
-# LiteBlog - django
+# LiteBlog
 
 Liteblog to minimalistyczna aplikacja blogowa napisana w oparciu o framework Django. Pozwala użytkownikom na tworzenie, publikowanie i zarządzanie treściami blogowymi w prosty i intuicyjny sposób.
 
