@@ -1,0 +1,2 @@
+# liteblog-django
+opis
