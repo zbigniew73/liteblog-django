@@ -1,0 +1,14 @@
+# Pomijanie wszystkich plików o rozszerzeniu ".log"
+*.log
+*.env
+*.sqlite3
+*.pyc
+__pycache__
+# Pomijanie pliku
+static/staticfiles.json
+manage.py
+# Pomijanie katalogu
+public/
+static/admin/
+tmp/
+
