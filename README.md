@@ -14,10 +14,13 @@ Wersja demo https://dev.liteblog.eu
 ![LiteBlog-Django](https://dev.liteblog.eu/static/django-lb.webp)
 
 Strona główna
+
 ![LiteBlog-Django-home](https://dev.liteblog.eu/static/django-h1.webp)
 
 Admin panel
+
 ![LiteBlog-Django-admin1](https://dev.liteblog.eu/static/django-ad1.webp)
 
 Admin panel post
+
 ![LiteBlog-Django-admin2](https://dev.liteblog.eu/static/django-ad2.webp)
