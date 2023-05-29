@@ -1,0 +1,22 @@
+{% extends 'blog/page.html' %}
+{% load static %}
+{% load markdown_extras %}
+<!-- Content start -->
+{% block title %}{{ post.title }} | {% endblock %}
+{% block content %}
+<div class="content pd-0">
+<div class="row post">
+<div class="card mb-4 border-0">
+<div class="card-body p-0">
+<h2 class="card-title">
+<a class="text-success text-decoration-none" title="{{ post.title }}">{{ post.title }}</a></h2>
+<p><span class="date">Autor : {{ post.autor }} | Data : {{ post.pub_date|date}} | Tag: {% for tag in post.tags.all %} <a class="text-success text-decoration-none" href="{% url 'tag_detail' tag.slug %}"><b>{{ tag }}</b></a>{% endfor %} | Kategoria : <a class="text-success text-decoration-none" href="{% url 'category_detail' post.category.slug %}"><b>{{ post.category }}</b></a></p>
+{% if post.image %}<img src="{{ post.image.url }}" alt="{{ post.get_image_alt }}" title="{{ post.get_image_title }}" class="image-600-width">{% endif %}
+<p class="card-text">{{post.body|markdown|safe}}</p>
+<hr />
+</div>
+</div>
+</div>
+</div>
+{%endblock%}
+<!-- Content stop -->

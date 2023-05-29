@@ -11,7 +11,7 @@ height: 350px;
 }
 .image-300-width {
 float: left;
-max-width: 300px;
+max-width: 250px;
 height: auto;
 }
 .codehilite {

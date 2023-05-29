@@ -1,0 +1,26 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+{% block head %}
+{% include 'blog/head.html' %}
+{% endblock head %}
+<body class="page" id="1">
+{% block nav %}
+{% include 'blog/nav.html' %}
+{% endblock nav %}
+{% block breadcrumb %}
+{% include 'blog/breadcrumb.html' %}
+{% endblock breadcrumb %}
+{% block content %}
+{% endblock content %}
+</div>
+{% block sidebar %}
+{% include 'blog/sidebar.html' %}
+{% endblock sidebar %}
+</div>
+</div>
+{% block footer %}
+{% include 'blog/footer.html' %}
+{% endblock footer %}
+</body>
+</html>
