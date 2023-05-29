@@ -1,0 +1,30 @@
+header ul.nav li.nav-item:hover a.nav-link {
+    background-color: rgb(var(--bs-success-rgb)) !important;
+}
+.image-max-width {
+max-width: 900px;
+height: auto;
+}
+.image-600-width {
+max-width: auto;
+height: 350px;
+}
+.image-300-width {
+float: left;
+max-width: 300px;
+height: auto;
+}
+.codehilite {
+  border: 1px solid #aaa;
+  padding: 10px;
+  background-color: #f9f9f9;
+}
+.tag-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.tag-list a {
+  margin-right: 10px;
+  margin-bottom: 10px;
+}

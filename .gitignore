@@ -9,6 +9,6 @@ static/staticfiles.json
 manage.py
 # Pomijanie katalogu
 public/
-static/admin/
+staticfiles/
 tmp/
 
