@@ -5,8 +5,12 @@ import psutil
 from django.http.response import HttpResponse
 from django.http import HttpResponse
 from django.shortcuts import render
+from blog.models import Post, Category, Tag
 
 def about(request):
+    categories = Category.objects.all()
+    tags = Tag.objects.all()
+
     django_version = django.get_version()
     python_version = platform.python_version()
     process = psutil.Process()
@@ -14,6 +18,8 @@ def about(request):
     memory_usage = round(memory_usage, 1) # zaokrąglenie do jednego miejsca po przecinku
 
     context = {
+        'categories': categories,
+        'tags': tags,
         'django_version': django_version,
         'python_version': python_version,
         'memory_usage': memory_usage,
@@ -22,6 +28,9 @@ def about(request):
     return render(request, 'page/about.html', context)
 
 def kontakt(request):
+    categories = Category.objects.all()
+    tags = Tag.objects.all()
+
     django_version = django.get_version()
     python_version = platform.python_version()
     process = psutil.Process()
@@ -29,6 +38,8 @@ def kontakt(request):
     memory_usage = round(memory_usage, 1) # zaokrąglenie do jednego miejsca po przecinku
 
     context = {
+        'categories': categories,
+        'tags': tags,
         'django_version': django_version,
         'python_version': python_version,
         'memory_usage': memory_usage,
