@@ -11,4 +11,4 @@ poszukujących prostego, a zarazem funkcjonalnego narzędzia do prowadzenia blog
 
 Wersja demo https://dev.liteblog.eu
 
-![LiteBlog-Django](https://liteblog.eu/media/uploads/django-lb.webp)
+![LiteBlog-Django](https://dev.liteblog.eu/static/django-lb.webp)
