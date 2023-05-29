@@ -6,6 +6,7 @@ max-width: 900px;
 height: auto;
 }
 .image-600-width {
+float: left;
 max-width: auto;
 height: 350px;
 }

@@ -70,7 +70,7 @@ def category(request, slug):
     categories = Category.objects.all()
     tags = Tag.objects.all()
 
-    paginator = Paginator(posts, 5)  # Podział na 5 postów na stronę
+    paginator = Paginator(posts, 4)  # Podział na 5 postów na stronę
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
 
@@ -99,7 +99,7 @@ def tag(request, slug):
     categories = Category.objects.all()
     tags = Tag.objects.all()
 
-    paginator = Paginator(posts, 5)  # Podział na 5 postów na stronę
+    paginator = Paginator(posts, 4)  # Podział na 5 postów na stronę
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
 
