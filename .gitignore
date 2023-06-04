@@ -4,11 +4,14 @@
 *.sqlite3
 *.pyc
 __pycache__
+*.json
 # Pomijanie pliku
 static/staticfiles.json
 manage.py
 # Pomijanie katalogu
 public/
-staticfiles/
+node_modules/
+static/
+theme/
 tmp/
 

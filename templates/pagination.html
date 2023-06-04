@@ -1,0 +1,45 @@
+{% block pagination %}
+<nav class="pagination flex justify-center" aria-label="Page Navigation">
+  <ul class="pagination flex">
+    {% if page_obj.has_previous %}
+    <li class="page-item">
+      <a class="relative inline-flex items-center rounded-l-md px-2 py-2 text-gray-400 ring-1 ring-inset ring-gray-500 hover:bg-gray-50 focus:z-20 focus:outline-offset-0" href="?page={{ page_obj.previous_page_number }}{{ getvars }}{{ hashtag }}" aria-label="Previous">
+        <span aria-hidden="true">Prev</span>
+      </a>
+    </li>
+    {% else %}
+    <li class="page-item disabled">
+      <a class="relative inline-flex items-center rounded-l-md px-2 py-2 text-gray-400 ring-1 ring-inset ring-gray-500 hover:bg-gray-50 focus:z-20 focus:outline-offset-0" href="#" aria-label="Previous">
+        <span aria-hidden="true">Prev</span>
+      </a>
+    </li>
+    {% endif %}
+
+    {% for page in page_obj.paginator.page_range %}
+      {% if page == page_obj.number %}
+        <li class="page-item active border-success">
+          <a class="relative inline-flex items-center px-4 py-2 text-md text-white bg-emerald-800 focus:z-20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-800" href="?page={{ page }}{{ getvars }}{{ hashtag }}">{{ page }}</a>
+        </li>
+      {% else %}
+        <li class="page-item">
+          <a class="relative inline-flex items-center px-4 py-2 text-md text-gray-900 ring-1 ring-inset ring-gray-500 hover:bg-gray-50 focus:z-20 focus:outline-offset-0" href="?page={{ page }}{{ getvars }}{{ hashtag }}">{{ page }}</a>
+        </li>
+      {% endif %}
+    {% endfor %}
+
+    {% if page_obj.has_next %}
+    <li class="page-item">
+      <a class="relative inline-flex items-center rounded-r-md px-2 py-2 text-gray-400 ring-1 ring-inset ring-gray-500 hover:bg-gray-50 focus:z-20 focus:outline-offset-0" href="?page={{ page_obj.next_page_number }}{{ getvars }}{{ hashtag }}" aria-label="Next">
+        <span aria-hidden="true">Next</span>
+      </a>
+    </li>
+    {% else %}
+    <li class="page-item disabled">
+      <a class="relative inline-flex items-center rounded-r-md px-2 py-2 text-gray-400 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0" href="#" aria-label="Next">
+        <span aria-hidden="true">Next</span>
+      </a>
+    </li>
+    {% endif %}
+  </ul>
+</nav>
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block bread %}
+{% include 'bread.html' %}
+{% endblock bread %}
+{% block title %}Archiwum roku {{ year }}{% endblock %}
+{% block content %}
+<article class="p-6 bg-gray-100 rounded-xl">
+<h2 class="text-3xl font-bold" title="Archiwum roku {{ year }}">Archiwum roku {{ year }}</h2>
+<ul class="list-disc pl-6 mt-4 pl-4">{% for archive_entry in archive_list %}
+<li>{% if archive_entry.count > 0 %}<a href="{% url 'archive' year=archive_entry.year month=archive_entry.month %}">Month : {{ archive_entry.month }} | Number of posts : ({{ archive_entry.count }})</a></li>
+{% else %}No posts{% endif %}
+</li>
+{% empty %}<h3>No posts</h3>
+{% endfor %}
+</ul>
+</article>
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block bread %}
+{% include 'bread.html' %}
+{% endblock bread %}
+{% block title %}Archiwum - {{ month }} {{ year }}{% endblock %}
+{% block content %}
+<article class="p-6 bg-gray-100 rounded-xl">
+<h2 class="text-3xl font-bold" title="Archiwum - {{ month }} {{ year }}">Archiwum - {{ month }} {{ year }}</h2>
+{% if posts %}
+<ul class="list-disc pl-6 mt-4 pl-4">{% for post in posts %}
+<li><a title="{{ post.title }}" href="{{ post.get_absolute_url }}">{{ post.title }}</a></li>
+{% endfor %}
+</ul>
+{% else %}
+<h3>No posts found.</h3>
+{% endif %}
+</article>
+{% endblock %}

@@ -1,0 +1,68 @@
+<div class="w-1/4 ml-auto pl-4">
+<div class="space-y-4">
+<form class="p-6 bg-gray-100 rounded-xl" role="search" method="get" action="{% url 'search' %}">
+<h2 class="text-3xl font-bold">Search</h2>
+<input name="query" type="text" placeholder="Wyszukaj..." class="border border-gray-300 px-4 py-2 rounded-md">
+<button class="bg-emerald-800 shadow-lg shadow-emerald-800/50 px-4 py-2 text-white rounded-md mt-4">Szukaj</button>
+</form>
+<div class="space-y-4 mt-4">
+<article class="p-6 bg-gray-100 rounded-xl">
+<h2 class="text-3xl font-bold">Latest Posts</h2>
+<div class="mt-2">
+{% for post in latest_posts %}
+<h3 class="list-disc"><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h3>
+{% endfor %}
+</div>
+</article></div>
+<div class="space-y-4 mt-4">
+<article class="p-6 bg-gray-100 rounded-xl">
+<h2 class="text-3xl font-bold">Category</h2>
+<div class="mt-2">
+{% for category in categories %}
+<h3 class="list-disc"><a href="{% url 'category_detail' category.slug %}">{{ category.title }}</a></h3>
+{% endfor %}
+</div>
+</article></div>
+<div class="space-y-4 mt-4">
+<article class="p-6 bg-gray-100 rounded-xl">
+<h2 class="text-3xl font-bold">Tag Cloud</h2>
+<div class="tag-cloud mt-2">
+{% for tag in tags %}
+<span class="tag"><a href="{% url 'tag_detail' tag.slug %}" class="tag-link">{{ tag.title }}</a></span>
+{% endfor %}
+</div>
+</article></div>
+<div class="space-y-4 mt-4">
+<article class="p-6 bg-gray-100 rounded-xl">
+<h2 class="text-3xl font-bold">Archive Posts</h2>
+<div class="mt-2">
+{% for item in archive %}
+<h3 class="list-disc"><a href="{% url 'archive' item.year item.month %}">{{ item.year }}/{{ item.month }} ({{ item.count }})</a></h3>
+{% endfor %}
+</div>
+</article></div>
+<div class="space-y-4 mt-4">
+<article class="p-6 bg-gray-100 rounded-xl">
+<h2 class="text-3xl font-bold">Info Tech</h2>
+<ul class="list-disc pl-6 mt-4">
+<li>Django: {{ django_version }}</li>
+<li>Python: {{ python_version }}</li>
+<li>RAM Django: {{ memory_usage }} MB</li></ul>
+</article></div>
+<div class="space-y-4 mt-4">
+<article class="p-6 bg-gray-100 rounded-xl">
+<h2 class="text-3xl font-bold">Meta</h2>
+<div class="tag-cloud mt-4">
+<button class="bg-emerald-800 shadow-lg shadow-emerald-800/50 px-4 py-2 text-white rounded-md">
+<a href="/sitemap.xml" class="text-white">Sitemap</a>
+</button>
+<button class="bg-emerald-800 shadow-lg shadow-emerald-800/50 px-4 py-2 text-white rounded-md">
+<a href="/feed/rss" class="text-white">RSS</a>
+</button>
+<button class="bg-emerald-800 shadow-lg shadow-emerald-800/50 px-4 py-2 text-white rounded-md">
+<a href="/feed/atom" class="text-white">Atom</a>
+</button>
+</div>
+</article>
+</div>
+</div> 

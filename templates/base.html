@@ -1,26 +1,45 @@
+{% load static tailwind_tags %}
 {% load static %}
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
+<head>
 {% block head %}
-{% include 'blog/head.html' %}
+{% include 'head.html' %}
 {% endblock head %}
-<body class="blog" id="1">
-{% block nav %}
-{% include 'blog/nav.html' %}
-{% endblock nav %}
-{% block breadcrumb %}
-{% include 'blog/breadcrumb.html' %}
-{% endblock breadcrumb %}
+<link href="{% static "css/code.css" %}" rel="stylesheet" />
+{% tailwind_css %}
+</head>
+<body>
+<nav class="py-6 px-8 bg-emerald-900 text-white text-lg flex justify-between">
+<a href="/">LiteBlog</a>
+<div>
+<a href="/" class="ml-4" title="Home">Home</a>
+<a href="/about.html" class="ml-4" title="About">About</a>
+<a href="/kontakt.html" class="ml-4" title="Kontakt">Kontakt</a>
+</div>
+</nav>
+<section class="py-2 px-8">
+<h1 class="text-3xl font-bold">Welcome to my LiteBlog</h1>
+{% block bread %}
+{% endblock %}
+</section>
+<main class="py-2 px-8">
+<div class="flex">
+<div class="w-3/4">
+<div class="space-y-4">
 {% block content %}
-{% endblock content %}
-</div>
-{% block sidebar %}
-{% include 'blog/sidebar.html' %}
-{% endblock sidebar %}
+{% endblock %}
+{% block pagination %}
+{% endblock pagination %}
 </div>
 </div>
-{% block footer %}
-{% include 'blog/footer.html' %}
-{% endblock footer %}
+{% block siedebar %}
+{% include 'siedebar.html' %}
+{% endblock siedebar %}
+</div>
+</main>
+<footer class="py-8 px-8 bg-emerald-900 text-white mt-4">
+<p class="text-sm">Copyright 2023 by <a href="https://dev.liteblog.eu/" title="dev.liteblog.eu">dev.liteblog.eu</a> All rights reserved | The site is powered by <a href="https://github.com/zbigniew73/liteblog-django" title="LiteBlog-django">LiteBlog-django</a></p>
+</footer>
 </body>
 </html>

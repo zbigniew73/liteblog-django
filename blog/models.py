@@ -58,7 +58,7 @@ class Post(models.Model):
     status = models.CharField(max_length=10, choices=CHOICES_STATUS, default=ACTIVE)
     site = models.ForeignKey(Site, on_delete=models.CASCADE, verbose_name='Strona', null=True)
     tags = models.ManyToManyField('Tag', verbose_name=u'Tagi', blank=True)
-    image = models.ImageField(upload_to='images/', blank=True, verbose_name='Obraz', null=True, help_text='Image Only: JPG, JPEG, PNG, WebP.')
+    image = models.ImageField(upload_to='static/', blank=True, verbose_name='Obraz', null=True, help_text='Image Only: JPG, JPEG, PNG, WebP.')
 
     class Meta:
         ordering = ('-pub_date',)

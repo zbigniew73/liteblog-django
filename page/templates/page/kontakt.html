@@ -1,23 +1,17 @@
-{% extends 'page.html' %}
-<!-- Content start -->
+{% extends 'base.html' %}
+{% load markdown_extras %}
+{% block bread %}
+{% include 'bread.html' %}
+{% endblock bread %}
+{% block title %}Kontakt{% endblock %}
 {% block content %}
-<div class="content pd-0">
-<div class="row post">
-<div class="card mb-4 border-0">
-<div class="card-body p-0">
-<h2 class target="_blank" lass="card-title">
-<a target="_blank" class="text-success text-decoration-none" href="/kontakt.html" title="Kontakt">Kontakt</a></h2>
-<p class="card-text">
-<img src="/static/django-lb.webp" alt="kontakt | dev.liteblog.eu" title="kontakt | dev.liteblog.eu" class="image-300-width">
-<p><b>Name</b> : Adam Kowalski</p>
-<p><b>Email</b> : adam.kowalski[at]gmail.com</p>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eget tellus ac tellus varius tristique sed et est. Integer dignissim libero vitae nisl laoreet molestie. Fusce et orci eu dolor consectetur pretium sed sit amet turpis. Aliquam erat volutpat. Cras gravida dui magna. Quisque porta quis turpis et tincidunt. Mauris a fermentum odio.</p>
-<p>Fusce vestibulum ultricies sagittis. Mauris ut accumsan felis. Nullam et pulvinar orci, ut pellentesque risus. Fusce ipsum tortor, vulputate vel purus sed, pretium faucibus felis. Donec a lorem elit. Ut non est odio. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ex ipsum, congue vel dolor convallis, iaculis posuere nisl. Nunc tincidunt tortor id mauris convallis, sit amet commodo orci fringilla. Sed hendrerit mollis finibus. Donec vel placerat risus.</p>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eget tellus ac tellus varius tristique sed et est. Integer dignissim libero vitae nisl laoreet molestie. Fusce et orci eu dolor consectetur pretium sed sit amet turpis. Aliquam erat volutpat. Cras gravida dui magna. Quisque porta quis turpis et tincidunt. Mauris a fermentum odio.</p>
-</p>
-</div>
-</div>
-</div>
-</div>
-{%endblock%}
-<!-- Content stop -->
+<article class="p-6 bg-gray-100 rounded-xl prose lg:prose-xl max-w-full w-full">
+<h2 class="text-3xl" title="Kontakt">Kontakt</h2>
+<img src="static/django-lb.webp" alt="Kontakt" title="Kontakt" style="width: 320px; height: 160px;" class="float-left mr-4">
+<h3 class="text-3xl" title="Info Kontakt">Informacje Kontaktowe</h3>
+<p class="mb-6"><b>Name</b> : Zbigniew Czechowski</p>
+<p class="mb-6"><b>e-mail</b> : zibi.czechowski@gmail.com</p>
+<p class="mb-6"><b>Mobile</b> : +48 </p>
+<pre>Dodatkowy tekst informacyjny lub wiadomość.</pre>
+</article>
+{% endblock %}

@@ -10,7 +10,8 @@ from blog.models import Post, Category, Tag
 def about(request):
     categories = Category.objects.all()
     tags = Tag.objects.all()
-
+    latest_posts = Post.objects.filter(status='active').order_by('-pub_date')[:9]
+    
     django_version = django.get_version()
     python_version = platform.python_version()
     process = psutil.Process()
@@ -20,6 +21,7 @@ def about(request):
     context = {
         'categories': categories,
         'tags': tags,
+        'latest_posts': latest_posts,
         'django_version': django_version,
         'python_version': python_version,
         'memory_usage': memory_usage,
@@ -30,6 +32,7 @@ def about(request):
 def kontakt(request):
     categories = Category.objects.all()
     tags = Tag.objects.all()
+    latest_posts = Post.objects.filter(status='active').order_by('-pub_date')[:9]
 
     django_version = django.get_version()
     python_version = platform.python_version()
@@ -40,6 +43,7 @@ def kontakt(request):
     context = {
         'categories': categories,
         'tags': tags,
+        'latest_posts': latest_posts,
         'django_version': django_version,
         'python_version': python_version,
         'memory_usage': memory_usage,

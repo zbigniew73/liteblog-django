@@ -1,0 +1,20 @@
+{% load static %}
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>{{ post.title }} | dev.liteblog.eu</title>
+<meta name="keywords" content="{% block keywords %}{{ post.body|safe|truncatechars:100 }}{% endblock %}" />
+<meta name="author" content="zbigniew@liteblog.eu" />
+<meta name="publisher" content="https://dev.liteblog.eu" />
+<meta name="copyright" content="2023 dev.liteblog.eu" />
+<meta name="generator" content="LiteBlog" />
+<meta name="google-site-verification" content="" />
+<meta name="google" content="notranslate" />
+<meta name="robots" content="index, follow">
+<meta name="description" content="{% block description %}{{ post.body|safe|truncatechars:300 }}{% endblock %}" />
+<meta name="title" content="{% block title %}{{ post.title }}{{ category.title }}{{ tag.title }}|dev.liteblog.eu{% endblock %}" />
+<link rel="alternate" type="application/rss+xml" title="Liteblog - RSS" href="/feed/rss">
+<link rel="alternate" type="application/atom+xml" title="LiteBlog - Atom" href="/feed/atom">
+<link rel="icon" type="image/x-icon" href="{% static "favicon.ico" %}">
+<link rel="icon" type="image/png" sizes="32x32" href="{% static "favicon.png" %}">
+<link rel="canonical" href="{{ request.scheme }}://{{ request.get_host }}{{ post.get_absolute_url }}">

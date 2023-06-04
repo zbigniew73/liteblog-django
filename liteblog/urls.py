@@ -11,8 +11,10 @@ from django.urls import include, path
 
 from .feeds import LatestPostsFeed, AtomSiteNewsFeed
 from .sitemaps import TagSitemap, CategorySitemap, PostSitemap, StaticViewSitemap
-from blog.views import frontpage
+from blog.views import frontpage, archive, year_archive
 from page.views import kontakt, about, robots_txt
+
+app_name = 'blog'
 
 sitemaps = {'tag': TagSitemap, 'category': CategorySitemap, 'post': PostSitemap, "static": StaticViewSitemap,}
 
@@ -24,8 +26,8 @@ urlpatterns = [
     path('kontakt.html', kontakt, name='kontakt'),
     path('', include('blog.urls')),
     path('', frontpage, name='frontpage'),
+    path('archive/<int:year>/<int:month>/', archive, name='archive'),
+    path('archive/<int:year>/', year_archive, name='year_archive'),
     path("feed/rss", LatestPostsFeed(), name="post_feed"),
     path('feed/atom/', AtomSiteNewsFeed()),
-]
-urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
-urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

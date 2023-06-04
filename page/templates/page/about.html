@@ -1,19 +1,20 @@
-{% extends 'page.html' %}
-<!-- Content start -->
+{% extends 'base.html' %}
+{% load markdown_extras %}
+{% block bread %}
+{% include 'bread.html' %}
+{% endblock bread %}
+{% block title %}About{% endblock %}
 {% block content %}
-<div class="content pd-0">
-<div class="row post">
-<div class="card mb-4 border-0">
-<div class="card-body p-0">
-<h2 class target="_blank" lass="card-title">
-<a target="_blank" class="text-success text-decoration-none" href="/about.html" title="About">About</a></h2>
-<img src="/static/django-lb.webp" alt="about | dev.liteblog.eu" title="about | dev.liteblog.eu" class="image-300-width">
-<p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eget tellus ac tellus varius tristique sed et est. Integer dignissim libero vitae nisl laoreet molestie. Fusce et orci eu dolor consectetur pretium sed sit amet turpis. Aliquam erat volutpat. Cras gravida dui magna. Quisque porta quis turpis et tincidunt. Mauris a fermentum odio.</p> 
-<p class="card-text">Vivamus faucibus, turpis sit amet lacinia vulputate, mi magna venenatis enim, ac commodo turpis dui sit amet elit. Curabitur nunc ante, fringilla nec neque at, malesuada dapibus augue. In vulputate est eu fringilla tempor. In eget fermentum augue, vitae finibus felis. Sed nec mattis sem, ut cursus urna. Proin pellentesque lorem efficitur, suscipit neque vel, tincidunt turpis. Nam volutpat mattis elementum. Praesent ornare elit vitae tempus rutrum. Donec euismod neque eu lectus sodales, at lobortis tellus facilisis. Etiam blandit suscipit lobortis. In placerat tristique commodo.</p>
-<p class="card-text">Fusce vestibulum ultricies sagittis. Mauris ut accumsan felis. Nullam et pulvinar orci, ut pellentesque risus. Fusce ipsum tortor, vulputate vel purus sed, pretium faucibus felis. Donec a lorem elit. Ut non est odio. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ex ipsum, congue vel dolor convallis, iaculis posuere nisl. Nunc tincidunt tortor id mauris convallis, sit amet commodo orci fringilla. Sed hendrerit mollis finibus. Donec vel placerat risus.</p>
-</div>
-</div>
-</div>
-</div>
-{%endblock%}
-<!-- Content stop -->
+<article class="p-6 bg-gray-100 rounded-xl prose lg:prose-xl max-w-full w-full">
+<h2 class="text-3xl" title="About">About</h2>
+<img src="static/django-lb.webp" alt="About" title="About" style="width: 320px; height: 160px;" class="float-left mr-4">
+<p class="mb-6">Cześć! Mam na imię Zbigniew - trochę informacji o sobie.</p>
+<p class="mb-6">Moje pasje koncentrują się głównie wokół technologii internetowych oprócz tego, moją zawodową ścieżką jest stolarstwo, obecnie pracuję jako projektant mebli, wykorzystując do tego program Corpus 5.</p>
+<p class="mb-6">Od dłuższego czasu jestem zafascynowany technologiami internetowymi i ich potencjałem.</p> 
+<p class="mb-6">Uwielbiam tworzyć dynamiczne strony internetowe oraz aplikacje internetowe. Jako fan frameworka Django, korzystam z niego do budowania zaawansowanych witryn internetowych. Dzięki Django mogę łatwo zarządzać danymi, tworzyć interaktywne formularze i dostarczać treści w sposób efektywny.</p>
+<h3 class="text-3xl" title="Zawód - stolarz">Zawód - stolarz i projektant mebli.</h3>
+<p class="mb-6">Moja zawodowa droga rozpoczęła się jako stolarz. W trakcie lat doskonaliłem swoje umiejętności w pracy , projektowaniu i tworzeniu mebli. Teraz pracuję jako projektant mebli, gdzie wykorzystuję program Corpus 5. To zaawansowane narzędzie do projektowania mebli, które umożliwia mi tworzenie wizualizacji, planów i specyfikacji mebli w sposób precyzyjny i efektywny.</p>
+<pre>To niesamowite, jak pasje i zawód mogą się ze sobą przeplatać,</pre> 
+<pre>pozwalając mi realizować się zarówno w dziedzinie technologii, jak i designu mebli.</pre>
+</article>
+{% endblock %}
