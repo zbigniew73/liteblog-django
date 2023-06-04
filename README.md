@@ -15,7 +15,7 @@ Wersja demo https://dev.liteblog.eu
 
 Strona główna
 
-![LiteBlog-Django-home](https://dev.liteblog.eu/static/django-h1.webp)
+![LiteBlog-Django-home](https://dev.liteblog.eu/static/django-h2.webp)
 
 Admin panel
 
