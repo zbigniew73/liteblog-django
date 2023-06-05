@@ -1,4 +1,7 @@
 {% extends 'base.html' %}
+{% block canonical %}
+<link rel="canonical" href="{{ request.scheme }}://{{ request.get_host }}{{ category.get_absolute_url }}">
+{% endblock %}
 {% load markdown_extras %}
 {% block bread %}
 {% include 'bread_cat.html' %}

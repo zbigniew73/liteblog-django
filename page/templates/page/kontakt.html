@@ -1,4 +1,7 @@
 {% extends 'base.html' %}
+{% block canonical %}
+<link rel="canonical" href="{{ request.scheme }}://{{ request.get_host }}{% url 'kontakt' %}">
+{% endblock %}
 {% load markdown_extras %}
 {% block bread %}
 {% include 'bread.html' %}
